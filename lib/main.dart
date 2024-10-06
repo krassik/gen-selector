@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    String title = "Gender Probe - 1.0";
+    String title = "GENDER PROBE";
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  MyHomePage(title: title),
+      home: MyHomePage(title: title),
     );
   }
 }
@@ -45,7 +45,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -62,13 +61,17 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
+        title: Center(child: Text(widget.title)),
       ),
       body: ListView(
-        children:  [
+        children: const [
           SelfTitleWidget(),
-          const ListTile(title: Text("Auxiliary Signals:"),),
-          const Divider(color: Color.fromARGB(255, 0, 0, 0),),
+          ListTile(
+            title: Text("Auxiliary Signals:"),
+          ),
+          Divider(
+            color: Color.fromARGB(255, 0, 0, 0),
+          ),
           SensorTitleWidget(title: "Camera"),
           SensorTitleWidget(title: "Microphone"),
           SensorTitleWidget(title: "Screen"),
